@@ -88,15 +88,15 @@ Adding Windows Service
    - **Name** - Windows10_AHV
    - **Cloud** - Nutanix
    - **OS** - Windows
-   - **VM Name** - Win-@@{calm_array_index}@@-@@{calm_time}@@
+   - **VM Name** - Win10-@@{calm_array_index}@@-@@{calm_time}@@
+   - **vCPUs** - 2
+   - **Cores per vCPU** - 2
+   - **Memory (GiB)** - 4
    - **Image** - Windows10
    - **Device Type** - Disk
    - **Device Bus** - SCSI
    - Select **Bootable**
-   - **vCPUs** - 2
-   - **Cores per vCPU** - 1
-   - **Memory (GiB)** - 4
-   - Select **Guest Customization**
+   - Check **Guest Customization** check box
    - **Type** - Sysprep
    - **Install Type** - Prepared
    - **Script** - Paste in the following Unattended XML:
@@ -185,8 +185,8 @@ Adding Windows Service
   .. figure:: images/windows3.png
 
 - Select :fa:`plus-circle` under **Network Adapters (NICs)**
-- **NIC 1** - Secondary
-- **Credential** - Select WIN_VM_CRED and leave the rest of the fields as default
+- **NIC 1** - Select Network-01
+- Under Connection, **Credential** - Select WIN_VM_CRED, update the to 300 seconds and leave the rest of the fields as default
 
   .. figure:: images/windows4.png
 

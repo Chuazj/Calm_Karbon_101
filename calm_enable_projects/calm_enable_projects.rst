@@ -81,7 +81,7 @@ Click **default** in the project list
 Under **Infrastructure**, fill out the following fields and click **comfirm** :
 - **Select which resources you want this project to consume** - Nutanix
 - **AHV Cluster** - *<ABC-POCxxx>*
-- Under **Network**, select the **Network 01** if is not added under the Selected Subnets. 
+- Under **Network**, select the **Network-01** if is not added under the Selected Subnets. 
 
 Select :fa:`star` for the **Primary** network to make it the default virtual network for VMs in the **default** project.
 

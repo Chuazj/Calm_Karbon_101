@@ -112,7 +112,7 @@ Editing Cloned Blueprint
 #. Select the **Mongo** Service and make the following changes in the **VM Tab**:
 
     - Update the **VM Configuration > Image** to **CentOS7**.
-    - Update the **Network Adapters > NIC** to **Network 01**.
+    - Update the **Network Adapters > NIC** to **Network-01**.
     - Update the **Connection > Credential** to **CENTOS**.
 
 #. Expand the **Linux** section.  Copy the **cloud-init** contents into the **Guest Customization**
