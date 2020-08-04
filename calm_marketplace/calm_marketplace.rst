@@ -26,16 +26,16 @@ By default, Calm comes pre-seeded with validated Blueprints for multiple open so
 
 #. Under **Marketplace Blueprints**, on the top right conner search for *MongoDB Single Node* select **MongoDB Single Node**.
 
-.. figure:: images/marketplace_p1_mongo.png
+   .. figure:: images/marketplace_p1_mongo.png
 
-.. note::
-The Blueprint description contains key information including licensing, hardware requirements, OS, supported platforms, and limitations.
+   .. note::
+   The Blueprint description contains key information including licensing, hardware requirements, OS, supported platforms, and limitations.
 
 #. Select the **Default** project from the right-hand side drop down and Click **Apply** and then click **Publish**.
 
-.. figure:: images/marketplace_p1_1.png
+   .. figure:: images/marketplace_p1_1.png
 
-Wait for the Blueprint **Status** to appear as **Published**.
+   Wait for the Blueprint **Status** to appear as **Published**.
 
 
 Cloning Blueprints from Marketplace
@@ -45,16 +45,16 @@ Cloning Blueprints from Marketplace
 
 #. Select the **MongoDB Single Node** Blueprint and click **Clone**.
 
-.. note::
+   .. note::
 
-  Selecting **Actions Included** for a Blueprint will display the actions that have been implemented for a given Blueprint, such as Create, Start, Stop, Delete, Update, Scale Up, Scale Down, etc.
+     Selecting **Actions Included** for a Blueprint will display the actions that have been implemented for a given Blueprint, such as Create, Start, Stop, Delete, Update, Scale Up, Scale Down, etc.
 
-.. figure:: images/marketplace_p1_5.png
+   .. figure:: images/marketplace_p1_5.png
 
 #. Fill out the following fields and click **Clone**:
 
-- **Blueprint Name** - *<INITIALS>*-MongoDB
-- **Project** - Default
+   - **Blueprint Name** - *<INITIALS>*-MongoDB
+  - **Project** - Default
 
 Editing Cloned Blueprint
 ........................
@@ -136,7 +136,7 @@ Editing Cloned Blueprint
       ::
         ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNGZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK6h822je/f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7GyhCRIwYzqfdgSmiAMYgJLrz/UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNRuz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5Orw== rsa-key-20190108
 
-  .. figure:: images/centos_pubkey.png
+      .. figure:: images/centos_pubkey.png
 
 #. Click **Save**.
 
