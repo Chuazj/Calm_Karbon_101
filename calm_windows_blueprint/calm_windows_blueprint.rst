@@ -58,7 +58,7 @@ Setting Variables
    +------------------------+------------------------------------+
    | **Variable Name**      | **Value**                          |
    +------------------------+------------------------------------+
-   | DOMAIN                 | ntnxlab.local                      |
+   | DOMAIN                 | nutanix.local                      |
    +------------------------+------------------------------------+
    | AD\_IP                 | <DC-VM-IP>(Provided in Lab details)|
    +------------------------+------------------------------------+
@@ -179,16 +179,16 @@ Adding Windows Service
             </settings>
          </unattend>
 
-  .. note::
-     This Unattended XML answer file will set some basic computer information such as hostname and organization, configure the Administrator password to our WIN_VM_CRED secret, open Powershell port 5985 in the firewall, and enable remote Powershell functionality.
+      .. note::
+         This Unattended XML answer file will set some basic computer information such as hostname and organization, configure the Administrator password to our WIN_VM_CRED secret, open Powershell port 5985 in the firewall, and enable remote Powershell functionality.
 
-  .. figure:: images/windows3.png
+      .. figure:: images/windows3.png
 
-- Select :fa:`plus-circle` under **Network Adapters (NICs)**
-- **NIC 1** - Select Network-01
-- Under Connection, **Credential** - Select WIN_VM_CRED, update the to 300 seconds and leave the rest of the fields as default
+   - Select :fa:`plus-circle` under **Network Adapters (NICs)**
+   - **NIC 1** - Select Network-01
+   - Under Connection, **Credential** - Select WIN_VM_CRED, update the to 300 seconds and leave the rest of the fields as default
 
-  .. figure:: images/windows4.png
+   .. figure:: images/windows4.png
 
 #. Click **Save** and ensure no errors or warnings pop-up.  If they do, resolve the issue, and **Save** again.
 
@@ -329,7 +329,7 @@ Launching the Blueprint
 
 #. From the toolbar at the top of the Blueprint Editor, click **Launch**.
 
-#. In the **Name of the Application** field, specify a unique name (e.g. Windows-*<INITIALS>*-1).
+#. In the **Name of the Application** field, specify a unique name (e.g. *<INITIALS>*-Win10VM01).
 
 #. Click **Create**.
 
