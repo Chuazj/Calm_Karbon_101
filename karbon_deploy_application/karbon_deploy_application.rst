@@ -73,9 +73,10 @@ Deploy Wordpress
 
 		wget https://kubernetes.io/examples/application/wordpress/wordpress-deployment.yaml
 
+
 	.. code-block:: bash
 
-        vi wordpress-deployment.yaml
+		vi wordpress-deployment.yaml
 
 #. Use vi to change the line that shows: **type: LoadBalancer** under **spec:** and change ``LoadBalancer`` into ``NodePort``.
 
