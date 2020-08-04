@@ -74,7 +74,7 @@ Adding Windows Service
 
    .. figure:: images/windows22.png
 
-# The **Windows 10_1CD** Image is also uploaded to speed up this process and can be used under the Disk Image selection.
+# The **Windows 10_1CD** Image is also uploaded in advance to speed up this process and can be used under the Disk Image selection.
 
 #. After uploading successfully, go back to Calm page and select **Blueprints** from the sidebar and click your ****<INITIALS>-Windows**** Blueprint to open the Blueprint Editor.
 
