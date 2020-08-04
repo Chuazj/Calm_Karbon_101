@@ -24,7 +24,8 @@ By default, Calm comes pre-seeded with validated Blueprints for multiple open so
 
 From **Prism Central > Apps**, select **Marketplace Manager** from the sidebar.
 
-Under **Marketplace Blueprints**, select **Mongo**.
+Under **Marketplace Blueprints**, on the top right conner search for MongoDB Single Node select **MongoDB Single Node**.
+.. figure:: images/marketplace_p1_mongo.png
 
 .. note::
 The Blueprint description contains key information including licensing, hardware requirements, OS, supported platforms, and limitations.
