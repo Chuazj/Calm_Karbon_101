@@ -61,11 +61,11 @@ Deploy Wordpress
 
 		** MAKE SURE YOU ARE IN THE WORDPRESS DIRECTORY BEFORE PROCEEDING!!!**
 
-To download the needed yaml file for wordpress mysql deployment run the following command:
+#. To download the needed yaml file for wordpress mysql deployment run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	wget https://kubernetes.io/examples/application/wordpress/mysql-deployment.yaml
+	    wget https://kubernetes.io/examples/application/wordpress/mysql-deployment.yaml
 
 #. To download the needed yaml file for wordpress deployment run the following command:
 
