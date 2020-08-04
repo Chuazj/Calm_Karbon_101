@@ -19,67 +19,70 @@ The cluster that we are going to create consists out of the following VMs:
 
   For more information on the terms master, worker and etcd, please look at https://kubernetes.io/docs/concepts/.
 
-Create a Karbon Kubernetes Cluster
-++++++++++++++++++++++++++++++++++
+Create a Karbon Kubernetes Cluster (Optional)
++++++++++++++++++++++++++++++++++++++++++++++
+.. note::
 
-In this exercise you will create a production ready Kubernetes cluster with Nutanix Karbon.
+  There is already a pre-created Kubernetes cluster for this lab. You can use the existing Kubernetes cluster for the subsequent lab work.
 
-Open https://<Prism-Central-IP>:9440/ in a browser and log in.
+#. In this exercise you will create a production ready Kubernetes cluster with Nutanix Karbon.
 
-Navigate to **Prism Central > Select the Three Dashes > Karbon** and ensure you see a ‘Karbon is successfully enabled’ notification.
+#. Open https://<Prism-Central-IP>:9440/ in a browser and log in.
 
-Click the link to open the Karbon Console.
+#. Navigate to **Prism Central > Select the Three Dashes > Karbon** and ensure you see a ‘Karbon is successfully enabled’ notification.
 
-.. image:: images/karbon_create_cluster_0.png
+#. Click the link to open the Karbon Console.
 
-Next click **+ Create Kubernetes Cluster**.
+   .. image:: images/karbon_create_cluster_0.png
 
-.. image:: images/karbon_create_cluster_2.png
+#. Next click **+ Create Kubernetes Cluster**.
 
-Select “Production Cluster” and click **Next**
+   .. image:: images/karbon_create_cluster_2.png
 
-.. image:: images/karbon_create_cluster_1.png
+#. Select “Production Cluster” and click **Next**
 
-Fill in the following:
+   .. image:: images/karbon_create_cluster_1.png
 
-**Name and Environment**
+#. Fill in the following:
 
-- **Name** - wordpress-*initialsLowerCase*
-- **Cluster** - Leave Default selected
-- **Kubernetes Version** - 1.10.3
-- **Host OS Image** - centos
+   **Name and Environment**
 
-.. image:: images/karbon_create_cluster_3.png
+   - **Name** - wordpress-*initialsLowerCase*
+   - **Cluster** - Leave Default selected
+   - **Kubernetes Version** - 1.10.3
+   - **Host OS Image** - centos
 
-Click **Next**
+  .. image:: images/karbon_create_cluster_3.png
 
-Select the virtual network to deploy Kubernetes nodes and click **Next**. The virtual network selected must have AHV IPAM enabled (with DNS & NTP configured in both Prism Central & Prism Elements accordingly). You must also key in an IP Address for the Master VIP that is within the same virtual network but outside of the IPAM range specified for the virtual network.
+#. Click **Next**
 
-.. image:: images/karbon_create_cluster_31.png
+#. Select the virtual network to deploy Kubernetes nodes and click **Next**. The virtual network selected must have AHV IPAM enabled (with DNS & NTP configured in both Prism Central & Prism Elements accordingly). You must also key in an IP Address for the Master VIP that is within the same virtual network but outside of the IPAM range specified for the virtual network.
 
-Enter Service & POD CIDR ranges and click **Next**. Keeping the defaults is recommended for this lab.
+   .. image:: images/karbon_create_cluster_31.png
 
-.. image:: images/karbon_create_cluster_32.png
+#. Enter Service & POD CIDR ranges and click **Next**. Keeping the defaults is recommended for this lab.
 
-Enter a username & password for the selected target Prism Elements cluster with administrative privileges and click **Create**
+   .. image:: images/karbon_create_cluster_32.png
 
-.. image:: images/karbon_create_cluster_33.png
+#. Enter a username & password for the selected target Prism Elements cluster with administrative privileges and click **Create**
 
-Wait for the cluster to deploy and reach a healthy status
+   .. image:: images/karbon_create_cluster_33.png
 
-.. image:: images/karbon_create_cluster_20.png
+#. Wait for the cluster to deploy and reach a healthy status
 
-During the creation of the Kubernetes cluster there will have been created:
+   .. image:: images/karbon_create_cluster_20.png
 
-- VMs
+#. During the creation of the Kubernetes cluster there will have been created:
 
-.. image:: images/karbon_create_cluster_10.png
+   - VMs
 
-- Persistent Storage as VolumeGroup
+   .. image:: images/karbon_create_cluster_10.png
 
-.. image:: images/karbon_create_cluster_18.png
+   - Persistent Storage as VolumeGroup
 
-.. image:: images/karbon_create_cluster_19.png
+   .. image:: images/karbon_create_cluster_18.png
+
+   .. image:: images/karbon_create_cluster_19.png
 
 
 Takeaways
