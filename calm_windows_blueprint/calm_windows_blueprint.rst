@@ -1,7 +1,7 @@
 .. _calm_windows_blueprint:
 
 -----------------------
-Windows AD
+Joining Windows AD Domain
 -----------------------
 
 Overview
@@ -73,6 +73,8 @@ Adding Windows Service
 #. Navigate to **Virtual Infrastructure** click **Images**, click **Add Images**. Select **URL** as Image resource, fill out download address *https://s3.amazonaws.com/get-ahv-images/Windows10-1709.qcow2* and click **Upload file** , **Next** and **Save**.
 
    .. figure:: images/windows22.png
+
+# The **Windows 10_1CD** Image is also uploaded to speed up this process and can be used under the Disk Image selection.
 
 #. After uploading successfully, go back to Calm page and select **Blueprints** from the sidebar and click your ****<INITIALS>-Windows**** Blueprint to open the Blueprint Editor.
 
