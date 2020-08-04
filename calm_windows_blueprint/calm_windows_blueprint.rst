@@ -42,7 +42,7 @@ Creating Blueprint
    - **Credential Name** - DOMAIN_CRED
    - **Username** - Administrator
    - **Secret** - Password
-   - **Password** - nutanix/4u
+   - **Password** - Provided in Lab details
 
    .. figure:: images/windows1.png
 
@@ -58,7 +58,7 @@ Setting Variables
    +------------------------+------------------------------------+
    | **Variable Name**      | **Value**                          |
    +------------------------+------------------------------------+
-   | DOMAIN                 | nutanix.local                      |
+   | DOMAIN                 | pocxxx.nutanix.local               |
    +------------------------+------------------------------------+
    | AD\_IP                 | <DC-VM-IP>(Provided in Lab details)|
    +------------------------+------------------------------------+
