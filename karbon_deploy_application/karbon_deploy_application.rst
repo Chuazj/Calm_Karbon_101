@@ -10,7 +10,7 @@ Overview
 In this module you are going to deploy the Wordpress on the Kubernetes Cluster you've created earlier (using MySQL as the database layer).
 
 Configure kubeconfig using Linux
-+++++++++++++++++
+++++++++++++++++++++++++++++++++
 
 #. The objective of the Kubeconfig file is to provide the information for the Kubernetes client to connect to the Kubernetes cluster. Onto kubenetes cluster you deployed through Karbon , click **Download the Kubeconfig** from **Actions** dropoff.
 
