@@ -1,7 +1,7 @@
 .. _calm_enable:
 
 ---------------------------------
-Enable and Create Projects
+Enable Calm and Create Projects
 ---------------------------------
 
 Overview
@@ -12,8 +12,8 @@ Overview
   In this exercise you will enable Calm from Prism Central configure AD and create a Project to contain your Blueprints and Applications created throughout the Workshop.
 
 
-Enabling App Management
-+++++++++++++++++++++++
+Enabling App Management (Optional)
+++++++++++++++++++++++++++++++++++
 
 Open \https://*<Prism-Central-IP>*:9440/ in a browser and log in.
 
@@ -33,8 +33,8 @@ You should get verification that Calm is enabling, which will take 5 to 10 minut
 
 .. figure:: images/581enable3.png
 
-Adding Active Directory
-+++++++++++++++++++++++
+Adding Active Directory (Optional)
+++++++++++++++++++++++++++++++++++
 
 This lab requires `AD Deployment`_. 
 
@@ -80,8 +80,8 @@ Click **default** in the project list
 
 Under **Infrastructure**, fill out the following fields and click **comfirm** :
 - **Select which resources you want this project to consume** - Nutanix
-- **AHV Cluster** - *<POCxx-ABC>*
-- Under **Network**, select the **Primary** and if available, the **Secondary** networks. 
+- **AHV Cluster** - *<ABC-POCxxx>*
+- Under **Network**, select the **Network 01** if is not added under the Selected Subnets. 
 
 Select :fa:`star` for the **Primary** network to make it the default virtual network for VMs in the **default** project.
 

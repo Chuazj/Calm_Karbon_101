@@ -61,15 +61,15 @@ Editing Cloned Blueprint
 
 #. Navigate to **Virtual Infrastructure** click **Images**, click **Add Images**. Select **URL** as Image resource, fill out download address *https://s3.amazonaws.com/get-ahv-images/CentOS7.qcow2* and click **Upload file**, **Next** and **Save**.
 
-.. figure:: images/marketplace_p1_51.png
+   .. figure:: images/marketplace_p1_51.png
 
 #. After uploading successfully, go back to Calm page and select **Blueprints** from the sidebar and click your **<INITIALS>-MongoDB** Blueprint to open the Blueprint Editor.
 
-.. figure:: images/marketplace_p1_6.png
+   .. figure:: images/marketplace_p1_6.png
 
 #. Click :fa:`exclamation-circle` to review the list of errors that would prevent a successful deployment of the Blueprint.
 
-.. figure:: images/marketplace_p1_7.png
+   .. figure:: images/marketplace_p1_7.png
 
 #. Click **Credentials** and select **CENTOS (Default)**.
 
@@ -79,7 +79,6 @@ Editing Cloned Blueprint
     - **Secret Type** - ssh private key
     - **Key** - Paste in your own private key, or use:
       ::
-
         -----BEGIN RSA PRIVATE KEY-----
         MIIEowIBAAKCAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNG
         ZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK
@@ -108,7 +107,7 @@ Editing Cloned Blueprint
         gmznERCNf9Kaxl/hlyV5dZBe/2LIK+/jLGNu9EJLoraaCBFshJKF
         -----END RSA PRIVATE KEY-----
 
-  .. figure:: images/centos_credential.png
+      .. figure:: images/centos_credential.png
 
 #. Select the **Mongo** Service and make the following changes in the **VM Tab**:
 
@@ -123,9 +122,9 @@ Editing Cloned Blueprint
     #cloud-config
     users:
     - name: centos
-    ssh-authorized-keys:
-      - @@{centos_public_key}@@
-    sudo: ['ALL=(ALL) NOPASSWD:ALL'] 
+      ssh-authorized-keys:
+        - @@{centos_public_key}@@
+      sudo: ['ALL=(ALL) NOPASSWD:ALL'] 
 
 #. On the left Side Toolbar, Select **Application Profile** and Click on **Nutanix**.
 
@@ -141,13 +140,13 @@ Editing Cloned Blueprint
 
 #. Click **Save**.
 
-# If there is a warning about account UUID , delete AWS,GCP,Azure and VMWare option at the bottom.
+#. If there is a warning about account UUID , delete AWS,GCP,Azure and VMWare option at the bottom.
 
-.. figure:: images/marketplace_p1_71.png
+   .. figure:: images/marketplace_p1_71.png
 
 #. Clear all errors and click **Launch**. Specify a unique **Application Name** (e.g. <INITIALS>-MongoDBVM01) and click **Create**.
 
-.. figure:: images/marketplace_p1_8.png
+   .. figure:: images/marketplace_p1_8.png
 
 
 Takeaways
