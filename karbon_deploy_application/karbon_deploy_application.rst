@@ -12,59 +12,54 @@ In this module you are going to deploy the Wordpress on the Kubernetes Cluster y
 Configure kubeconfig using Linux
 +++++++++++++++++
 
-The objective of the Kubeconfig file is to provide the information for the Kubernetes client to connect to the Kubernetes cluster. Onto kubenetes cluster you deployed through Karbon , click **Download the Kubeconfig** from **Actions** dropoff.
+#. The objective of the Kubeconfig file is to provide the information for the Kubernetes client to connect to the Kubernetes cluster. Onto kubenetes cluster you deployed through Karbon , click **Download the Kubeconfig** from **Actions** dropoff.
 
-.. image:: images/karbon_deploy_application_30.png
-
-
-Click on “Copy the Command to Clipboard”
+    .. image:: images/karbon_deploy_application_30.png
 
 
-.. image:: images/karbon_deploy_application_31.png
+#. Click on “Copy the Command to Clipboard”
+
+   .. image:: images/karbon_deploy_application_31.png
 
 
-In Calm, look at the IP address of the provisioned Kubectl client. Opern Terminal and SSH using the IP address with *nutanix* and *default password*
+#. In Calm, look at the IP address of the provisioned Kubectl client (Kubectl_client). Opern Terminal and SSH using the IP address with *nutanix* and *default password*
+
+   .. image:: images/karbon_deploy_application_32.png
 
 
-.. image:: images/karbon_deploy_application_32.png
+#. Paste the command into the shell
+
+   .. image:: images/karbon_deploy_application_33.png
 
 
-Paste the command into the shell
+#. Run this command to verify the successful connection to the Kubernetes cluster in Karbon.
 
+   .. code-block:: bash
 
-.. image:: images/karbon_deploy_application_33.png
+   	   kubectl get nodes
 
-
-Run this command to verify the successful connection to the Kubernetes cluster in Karbon.
-
-.. code-block:: bash
-
-	kubectl get nodes
-
-.. image:: images/karbon_deploy_application_34.png
-
+   .. image:: images/karbon_deploy_application_34.png
 
 
 Deploy Wordpress
 ++++++++++++++++
 
-Now that you have seen the high level information of the kubernetes cluster it is time to deploy our Wordpress application.
+#. Now that you have seen the high level information of the kubernetes cluster it is time to deploy our Wordpress application.
 
-Create a directory in the location you are in via the command line named **wordpress**, and change into that directory.
+#. Create a directory in the location you are in via the command line named **wordpress**, and change into that directory.
 
-.. code-block:: bash
+   .. code-block:: bash
 
-	mkdir wordpress
+	   mkdir wordpress
 
-	cd wordpress
+	   cd wordpress
 
-.. note::
+   .. note::
+		Kubernetes needs yaml files to create applications and their dependencies.
+		You are going to download two yaml files and store them in the just created **wordpress** directory.
+		Look at https://www.mirantis.com/blog/introduction-to-yaml-creating-a-kubernetes-deployment/ or at https://kubernetes.io/docs/concepts/workloads/controllers/deployment/ to get more information on yaml and kubernetes.
 
-	Kubernetes needs yaml files to create applications and their dependencies.
-	You are going to download two yaml files and store them in the just created **wordpress** directory.
-	Look at https://www.mirantis.com/blog/introduction-to-yaml-creating-a-kubernetes-deployment/ or at https://kubernetes.io/docs/concepts/workloads/controllers/deployment/ to get more information on yaml and kubernetes.
-
-	** MAKE SURE YOU ARE IN THE WORDPRESS DIRECTORY BEFORE PROCEEDING!!!**
+		** MAKE SURE YOU ARE IN THE WORDPRESS DIRECTORY BEFORE PROCEEDING!!!**
 
 To download the needed yaml file for wordpress mysql deployment run the following command:
 
@@ -72,149 +67,146 @@ To download the needed yaml file for wordpress mysql deployment run the followin
 
 	wget https://kubernetes.io/examples/application/wordpress/mysql-deployment.yaml
 
-To download the needed yaml file for wordpress deployment run the following command:
+#. To download the needed yaml file for wordpress deployment run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	wget https://kubernetes.io/examples/application/wordpress/wordpress-deployment.yaml
+		wget https://kubernetes.io/examples/application/wordpress/wordpress-deployment.yaml
 
-.. code-block:: bash
+	.. code-block:: bash
 
-    vi wordpress-deployment.yaml
+        vi wordpress-deployment.yaml
 
-Use vi to change the line that shows: **type: LoadBalancer** under **spec:** and change ``LoadBalancer`` into ``NodePort``.
+#. Use vi to change the line that shows: **type: LoadBalancer** under **spec:** and change ``LoadBalancer`` into ``NodePort``.
 
-.. note::
+	.. note::
 
-	Reason for this change is that Karbon does not (yet) support LoadBalanced.
+		Reason for this change is that Karbon does not (yet) support LoadBalanced.
 
-.. image:: images/karbon_deploy_application_12.png
+	.. image:: images/karbon_deploy_application_12.png
 
-**Change back** to the **kube** directory, and then run the following command to create the mysql password:
+#. **Change back** to the **kube** directory, and then run the following command to create the mysql password:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl create secret generic mysql-pass --from-literal=password=Nutanix/4u!
+		kubectl create secret generic mysql-pass --from-literal=password=Nutanix/4u!
 
-This should return:
+#. This should return:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	secret/mysql=pass created
+		secret/mysql=pass created
 
-.. image:: images/karbon_deploy_application_13.png
+	.. image:: images/karbon_deploy_application_13.png
 
-To check that the password has been created, run the following command:
+#. To check that the password has been created, run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl get secrets
+		kubectl get secrets
 
-This should show mysql-pass under NAME.
+#. This should show mysql-pass under NAME.
 
-.. image:: images/karbon_deploy_application_14.png
+	.. image:: images/karbon_deploy_application_14.png
 
-Creating the MySQL database is done by running the following command:
+#. Creating the MySQL database is done by running the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl create -f mysql-deployment.yaml
+		kubectl create -f mysql-deployment.yaml
 
-.. image:: images/karbon_deploy_application_15.png
+	.. image:: images/karbon_deploy_application_15.png
 
-This will also create persistent storage.
+#. This will also create persistent storage.
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl get pvc
+		kubectl get pvc
 
-.. image:: images/karbon_deploy_application_16.png
+	.. image:: images/karbon_deploy_application_16.png
 
-This storage will also show up in the Karbon UI under **wordpress -> Volume**.
+#. This storage will also show up in the Karbon UI under **wordpress -> Volume**.
 
-.. image:: images/karbon_deploy_application_17.png
+	.. image:: images/karbon_deploy_application_17.png
 
-You can now run the following command:
+#. You can now run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl get pods
+		kubectl get pods
 
-It will show the wordpress-mysql pod running.
+#. It will show the wordpress-mysql pod running.
 
-.. image:: images/karbon_deploy_application_18.png
+	.. image:: images/karbon_deploy_application_18.png
 
-To create the wordpress application, run the following command:
+#. To create the wordpress application, run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl create -f wordpress-deployment.yaml
+		kubectl create -f wordpress-deployment.yaml
 
-.. image:: images/karbon_deploy_application_19.png
+	.. image:: images/karbon_deploy_application_19.png
 
-This will also create persistent storage and a pod.
+#. This will also create persistent storage and a pod.
 
-You can now run the following command:
+#. You can now run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl get pods
+		kubectl get pods
 
-.. image:: images/karbon_deploy_application_20.png
+	.. image:: images/karbon_deploy_application_20.png
 
-It will show both pods running.
+#. It will show both pods running.
 
 Accessing Wordpress
 +++++++++++++++++++
 
-Our Wordpress with mysql application is now running.
+#. Our Wordpress with mysql application is now running.
 
-Now we need to make a connection to the Wordpress UI to configure the application.
+#. Now we need to make a connection to the Wordpress UI to configure the application.
 
-To get the IP address where the UI is running, we need to see what the worker nodes are on which the application is running.
+#. To get the IP address where the UI is running, we need to see what the worker nodes are on which the application is running.
 
-Lets show a list of a Master and worker nodes, run the following command:
+#. Lets show a list of a Master and worker nodes, run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl get nodes
+		kubectl get nodes
 
-.. image:: images/karbon_deploy_application_23.png
+	.. image:: images/karbon_deploy_application_23.png
 
-Record down one of the worker VM name and it will be used in the next command.
+#. Record down one of the worker VM name and it will be used in the next command.
 
-To get the IP address of one of the workers, run the following command:
+#. To get the IP address of one of the workers, run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl describe node <worker VM name>|grep "InternalIP"
+		kubectl describe node <worker VM name>|grep "InternalIP"
 
-.. image:: images/karbon_deploy_application_24.png
+	.. image:: images/karbon_deploy_application_24.png
 
 
-As the application is running on an internal network inside the kubernetes cluster, we also need to have the service port on which the wordpress application is running.
+#. As the application is running on an internal network inside the kubernetes cluster, we also need to have the service port on which the wordpress application is running.
 
-To see which port number is used to for the Wordpress application, run the following command:
+#. To see which port number is used to for the Wordpress application, run the following command:
 
-.. code-block:: bash
+	.. code-block:: bash
 
-	kubectl get services wordpress
+		kubectl get services wordpress
 
-.. image:: images/karbon_deploy_application_26.png
+	.. image:: images/karbon_deploy_application_26.png
 
-Putting the IP address and the service port together we can open the Wordpress UI. In our example 10.42.114.119:31800.
+#. Putting the IP address and the service port together we can open the Wordpress UI. In our example 10.42.114.119:31800.
 
-In a new Browser tab, go to \http://10.42.114.119:31800
+#. In a new Browser tab, go to \http://10.42.114.119:31800
 
-.. image:: images/karbon_deploy_application_27.png
+	.. image:: images/karbon_deploy_application_27.png
 
-In the initial configuration page, provide the parameters that are asked for.
+#. In the initial configuration page, provide the parameters that are asked for.
 
-At the end of the settings, click the **Log in** button and login to the Wordpress UI.
+#. At the end of the settings, click the **Log in** button and login to the Wordpress UI.
 
-.. image:: images/karbon_deploy_application_29.png
+	.. image:: images/karbon_deploy_application_29.png
 
-Your Wordpress application with MySQL as the database is running and ready....
-
-Takeaways
-+++++++++
+#. Your Wordpress application with MySQL as the database is running and ready!

@@ -13,10 +13,10 @@ Overview
 
 In this lab we will enable Karbon and then we will prepare network for Karbon.
 
-Enable Karbon (Optional-If Karbon is already Enabled)
+Enable Karbon (Optional-If Karbon is not Enabled)
 +++++++++++++
 
-#. Navigate to **Administrator** -> **LCM** to see current Karbon version, if it is not 1.0.1, upgrade to the latest 1.0.1 version. (Optional)
+#. Navigate to **Administrator** -> **LCM** to see current Karbon version, if it is not 2.1.0, upgrade to the latest version. (Optional)
 
    .. image:: images/karbon_deploy_cvm_8.png
 
@@ -45,11 +45,11 @@ NTP and Network for Karbon
 ++++++++++++++++++++++++++
 #. Karbon authentication is time sensetive; make sure NTP is configured correctly.
 
-#. Navigate to **Prism Central Settings** -> **NTP Servers**
+#. Navigate to **Prism Central Settings** -> **NTP Servers**.
 
 #. Verify that NTP Servers is already configured.
 
-#. Else, Key in *0.pool.ntp.org* and click **+Add**
+#. Else, Key in *0.pool.ntp.org* and click **+Add**.
 
    .. image:: images/karbon_enable_9.png
 
@@ -66,7 +66,7 @@ NTP and Network for Karbon
 
    .. image:: images/karbon_enable_ipam.png
 
-#. Click *Cancel**.
+#. Click **Cancel**.
 
 
 
