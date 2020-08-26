@@ -64,7 +64,7 @@ Create a Karbon Kubernetes Cluster (Optional)
 
    .. image:: images/karbon_create_cluster_32.png
 
-#. Enter a username & password for the selected target Prism Elements cluster with administrative privileges and click **Create**
+#. Enter a username & password for the selected target Prism Elements cluster with administrative privileges and click **Create**. Select **Default** under the Storage Container Name.
 
    .. image:: images/karbon_create_cluster_33.png
 
