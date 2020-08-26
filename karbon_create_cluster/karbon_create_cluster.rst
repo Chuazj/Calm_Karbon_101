@@ -12,8 +12,8 @@ Before we can deploy an application using kubernetes we need to create a Kuberne
 The cluster that we are going to create consists out of the following VMs:
 
 - 1 Master node (VM)
-- 3 Worker node (VMs)
-- 3 etcd nodes (VMs)
+- 1 Worker node (VM)
+- 1 etcd nodes (VM)
 
 .. note::
 
@@ -39,7 +39,7 @@ Create a Karbon Kubernetes Cluster (Optional)
 
    .. image:: images/karbon_create_cluster_2.png
 
-#. Select “Production Cluster” and click **Next**
+#. Select “Development Cluster” and click **Next**
 
    .. image:: images/karbon_create_cluster_1.png
 
@@ -49,8 +49,8 @@ Create a Karbon Kubernetes Cluster (Optional)
 
    - **Name** - wordpress-*initialsLowerCase*
    - **Cluster** - Leave Default selected
-   - **Kubernetes Version** - 1.10.3
-   - **Host OS Image** - centos
+   - **Kubernetes Version** - 1.16.10
+   - **Host OS Image** - ntnx-06
 
   .. image:: images/karbon_create_cluster_3.png
 
